@@ -4,17 +4,146 @@
         <title>7</title>
     </head>
     <body>
+        <p>
+            <button onclick="
+                updateCalculation('1')
+            ">1</button>
+
+            <button onclick="
+                updateCalculation('2')
+            ">2</button>
+
+            <button onclick="
+                updateCalculation('3')
+            ">3</button>
+
+            <button onclick="
+                updateCalculation(' + ')
+            ">+</button>
+        </p>
+
+        <p>
+            <button onclick="
+                updateCalculation('4')
+            ">4</button>
+
+            <button onclick="
+                updateCalculation('5')
+            ">5</button>
+
+            <button onclick="
+                updateCalculation('6')
+            ">6</button>
+
+            <button onclick="
+                updateCalculation(' - ')
+            ">-</button>
+        </p>
+
+        <p>
+            <button onclick="
+                updateCalculation('7')
+            ">7</button>
+
+            <button onclick="
+                updateCalculation('8')
+            ">8</button>
+
+            <button onclick="
+                updateCalculation('9')
+            ">9</button>
+
+            <button onclick="
+                calculation += ' * ';
+                console.log(calculation);
+            ">*</button>
+        </p>
+
+        <p>
+            <button onclick="
+                updateCalculation('0')
+            ">0</button>
+
+            <button onclick="
+                updateCalculation('.')
+            ">.</button>
+
+            <button onclick="
+                // Note: eval() takes a string and runs it as code.
+                // Avoid using eval() in real world projects since
+                // it can potentially be given harmful code to run.
+                // Only use eval() for learning purposes.
+                calculation = eval(calculation);
+                console.log(calculation);
+            ">=</button>
+
+            <button onclick="
+                updateCalculation(' / ')
+            ">/</button>
+        </p>
+
+        <p>
+            <button onclick="
+                updateCalculation('')
+            ">Clear</button>
+        </p>
         <script>
+            let calculation = '';
+            function updateCalculation(operation) {
+                if (operation === '') {
+                    console.log('Cleared');
+                } else {
+                calculation += operation;
+                console.log(calculation);
+                }
+            }
+            /*function convertLength(length, from, to) {
+                if (from !== 'km' && from !== 'miles' && from !== 'ft') {
+                    return `Invalid unit: ${from}`;
+                } else if (to !== 'km' && to !== 'miles' && to !== 'ft') {
+                    return `Invalid unit: ${to}`;
+                } else if (from === 'miles' && to === 'km') {
+                    const result = length * 1.6;
+                    return `${result} ${to}`;
+                } else if (from === 'km' && to === 'miles') {
+                    const result = length / 1.6;
+                    return `${result} ${to}`;
+                } else if (from === 'miles' && to === 'ft') {
+                    const result = length * 5280;
+                    return `${result} ${to}`;
+                } else if (from === 'km' && to === 'ft') {
+                    const result = length * 3281;
+                    return `${result} ${to}`;
+                } else if (from === 'ft' && to === 'miles') {
+                    const result = length / 5280;
+                    return `${result} ${to}`;
+                } else if (from === 'ft' && to === 'km') {
+                    const result = length / 3281;
+                    return `${result} ${to}`;
+                } else if (from === to) {
+                    const result = length;
+                    return `${result} ${to}`;
+                }
+            }
+            console.log(convertLength(10, 'ft', 'miles'))
+            function convertTemperature(degrees, unit) {
+                if (unit === 'C') {
+                    const result = convertToCelsius(degrees);
+                    return `${result}C`;
+                } else {
+                    const result = convertToFahrenheit(degrees)
+                    return `${result}F`;
+                }
+            }
+            
             function convertToFahrenheit(celsius) {
-                const fahrenheit = (celsius * (9 / 5)) + 32;
-                console.log(fahrenheit);
+                return (celsius * (9 / 5)) + 32;
             }
             
             function convertToCelsius(fahrenheit) {
-                const celsius = ((fahrenheit - 32) * (5 / 9));
-                console.log(celsius);
-            }
-            convertToCelsius();
+                return ((fahrenheit - 32) * (5 / 9));
+            }  
+            console.log(convertTemperature(21,'F'))*/
         </script>
     </body>
 </html>
