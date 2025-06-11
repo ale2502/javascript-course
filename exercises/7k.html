@@ -12,12 +12,7 @@
         </button>
         
         <button onclick="
-            if (cartQuantity + 1 > 10) {
-                alert('The cart is full.')
-                console.log(`Cart quantity: ${cartQuantity}`);
-            } else {
-                updateCartQuantity(1);
-            }
+            updateCartQuantity(1);
         ">
             Add to Cart
         </button>
@@ -47,12 +42,7 @@
         </button>
 
         <button onclick="
-            if (cartQuantity - 2 < 0) {
-                alert('Not enough items in the cart.')
-                console.log(`Cart quantity: ${cartQuantity}`);
-            } else {
-                updateCartQuantity(- 2);
-            }
+            updateCartQuantity(- 2);
         ">
             -2
         </button>
