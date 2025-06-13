@@ -82,21 +82,19 @@
         <p>
             <button onclick="
                 updateCalculation('')
-                localStorage.removeItem('calculation');
-                localStorage.setItem('calculation', calculation);
             ">Clear</button>
         </p>
         <script>
             let calculation = localStorage.getItem('calculation') || '';
             function updateCalculation(operation) {
                 if (operation === '') {
+                    calculation = '';
                     console.log('Cleared');
                 } else {
-                calculation += operation;
-                console.log(calculation);
+                    calculation += operation;
+                    console.log(calculation);
                 }
-            localStorage.setItem('calculation', calculation);               
+            localStorage.setItem('calculation', calculation);
             }
-
         </script>
 </html>
