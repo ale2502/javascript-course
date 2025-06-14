@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Document</title>
+    </head>
+    <body>
+        <!--
+        <button>9a</button>
+        <button class="js-button">9b</button>
+        
+        <button onclick="
+            displayChoice('heads');
+        ">heads</button>
+        <button onclick="
+            displayChoice('tails');
+        ">tails</button>
+        <p class="player-choice"></p>
+        -->
+
+        <input placeholder="Name" class="js-input" onkeydown="
+            handleSubmitKeydown(event);
+        ">
+        <button onclick="
+            displayName();
+        ">Submit</button>
+        <p class="name-display"></p>
+
+        <script>
+            function displayName() {
+                const name = document.querySelector('.js-input').value;
+                document.querySelector('.name-display').innerHTML = `Your name is: ${name}`;
+            }
+            
+            function handleSubmitKeydown(event) {
+                if (event.key === 'Enter') {
+                    displayName();
+                }
+            }
+
+            /*
+            const x = document.querySelector('button');
+            console.log(x);
+
+            document.querySelector('.js-button').innerHTML = '9b done!';
+            
+            function displayChoice(choice) {
+                    document.querySelector('.player-choice').innerHTML = `You chose: ${choice}`;
+            }
+            */
+        </script>
+    </body>
+</html>
