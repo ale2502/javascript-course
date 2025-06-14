@@ -5,7 +5,16 @@
     </head>
     <body>
         <button>hello</button>
+        <button class="js-button">Second button</button>
         <script>
+            console.log(document.querySelector('button').innerHTML);
+            document.querySelector('button')
+                .innerHTML = 'Changed';
+
+            const butttonElement = document.querySelector('.js-button');
+
+            console.log(butttonElement);
+            /*
             console.log(document.title);
             document.title = 'Changed';
 
@@ -13,7 +22,7 @@
 
             console.log(document.body.innerHTML);
             document.body.innerHTML = 'Changed';
-            /*
+            
             document.body.innerHTML = 'hello';
             document.title = 'Churros';
             */
