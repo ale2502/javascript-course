@@ -59,6 +59,8 @@ function addOne(array) {
     console.log(numsPlusOne);
 }
 
+//11i
+
 function addNum(array, num) {
     const result = [];
     for(let i = 0; i < array.length; i++) {
@@ -67,7 +69,7 @@ function addNum(array, num) {
     console.log(result);
 }
 
-//11i
+//11j
 
 function addArrays(array1, array2) {
     let result = [];
@@ -78,4 +80,68 @@ function addArrays(array1, array2) {
     console.log(result);
 }
 
-addArrays([1, 2, 3], [1, 7, 8]);
+//11k
+
+function countPositive(nums) {
+    let total = 0;
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] > 0) {
+            total++;
+        }
+    }
+    console.log(total);
+}
+
+//11l
+
+function minMax(nums) {
+    const result = {
+        min: nums[0],
+        max: nums[0]
+    }
+    for (let i = 0; i < nums.length; i++) {
+        const value = nums[i];
+        if (value < result.min) {
+            result.min = value;
+        }
+        if (value > result.max) {
+            result.max = value;
+        }
+    }
+    console.log(result);
+}
+
+//11m
+
+function minMaxB(nums) {
+    const result = {
+        min: null,
+        max: null
+    };
+    for (let i = 0; i < nums.length; i++) {
+        const value = nums[i];
+        if (result.min === null || value < result.min) {
+            result.min = value;
+        }
+        if (result.max === null || value > result.max) {
+            result.max = value;
+        }
+    }
+    console.log(result);
+}
+
+//11n
+
+function countWords(words) {
+    const result = {};
+    for (let i = 0; i < words.length; i++) {
+        if (result[words[i]]) {
+            result[words[i]]++;
+        } else {
+            result[words[i]] = 1;
+        }
+    }
+    console.log(result);
+}
+
+countWords(['apple', 'kiwi', 'apple', 'orange']);
