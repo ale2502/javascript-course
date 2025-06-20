@@ -144,4 +144,141 @@ function countWords(words) {
     console.log(result);
 }
 
-countWords(['apple', 'kiwi', 'apple', 'orange']);
+//11o
+
+/*
+const array = ['hello', 'world' ,'search', 'churros']
+for (let i = 0; i < array.length; i++) {
+    if (array[i] !== 'search') {
+        const x = -1
+    } else {
+        x = i;
+    }
+}
+*/
+
+//11p
+
+/*
+const array = ['hello', 'world' ,'search', 'churros', 'search']
+for (let i = 0; i < array.length; i++) {
+    if (array[i] !== 'search') {
+        const x = -1;
+    } else {
+        x = i;
+        break;
+    }
+}
+console.log(x);
+*/
+
+//11q
+
+function findIndex(array, word) {
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] === word) {
+            return i;    
+        }
+    }
+    return -1;   
+}
+
+//11r
+
+function removeEgg(foods) {
+    let result = [];
+    for (let i = 0; i < foods.length; i++) {
+        if (foods[i] === 'egg') {
+            continue;
+        } else {
+            result.push(foods[i]);
+        }
+    }
+    console.log(result);
+}
+
+//11s
+
+function removeTwoEgg(foods) {
+    let result = [];
+    let k = 0;
+    for (let i = 0; i < foods.length; i++) {
+        if (foods[i] === 'egg' && k < 2) {
+            k++;
+            continue;
+        }
+        result.push(foods[i]);    
+    }
+    console.log(result);
+}
+
+function removeTwoEggg(foods) {
+    let result = [];
+    let k = 0;
+    for (let i = 0; i < foods.length; i++) {
+        if (foods[i] === 'egg') {
+            if (k < 2) {
+                k++;
+                continue;
+            }
+        }
+        result.push(foods[i]);    
+    }
+    console.log(result);
+}
+
+//11t
+
+function removeLastTwoEgg(foods) {
+    let result = [];
+    let k = 0;
+    const reversedFoods = foods.reverse();
+    for (let i = 0; i < foods.length; i++) {
+        if (reversedFoods[i] === 'egg' && k < 2) {
+            k++;
+            continue;
+        }
+        result.push(reversedFoods[i]);    
+    }
+    console.log(result.reverse());
+}
+//removeLastTwoEgg(['egg', 'apple', 'egg', 'egg', 'ham']);
+
+//11u
+//Here we basically have to .slice() the array to in fact create a new array. That's what this function does.
+
+//11v
+
+function fizzBuzz() {
+    for (let i = 0; i <= 20; i++ ) {
+        if (i % 3 === 0 && i % 5 === 0) {
+            console.log('FizzBuzz');
+            continue;
+        } else if (i % 3 === 0) {
+            console.log('Fizz');
+            continue;
+        } else if (i % 5 === 0) {
+            console.log('Buzz');
+            continue;
+        } else {
+            console.log(i);
+        }
+    }
+}
+
+//11w
+
+function unique(array) {
+    const result = [];
+    for (let i = 0; i < array.length; i++) {
+        const word = array[i];
+        if (findIndex(result, word) === -1) {
+            result.push(word);
+        }
+    }
+    return result;
+}
+
+
+
+
