@@ -4,11 +4,7 @@
         <title>12 Exercises</title>
     </head>
     <body>
-        <button class="js-button-start" onclick="
-        start();
-        ">
-            Start
-        </button>
+        <button class="js-button-start">Start</button>
         <p>
             <button class="js-add-to-cart-button" onclick="
                 addToCart2();
@@ -104,6 +100,11 @@
                     }, 1000);
                 }
             }
+
+            document.querySelector('.js-button-start')
+                .addEventListener('click', () => {
+                    start();
+                });
 
         </script>
     </body>
