@@ -656,5 +656,37 @@ const products = [
       "apparel",
       "mens"
     ]
+  },
+  {
+    id: "id1",
+    image: "images/products/backpack.jpg",
+    name: "Unisex Travel Backpack",
+    rating: {
+      stars: 4,
+      count: 2378
+    },
+    priceCents: 2200,
+    keywords: [
+      "bags",
+      "travel",
+      "apparel",
+      "unisex"
+    ]
+  },
+  {
+    id: "id2",
+    image: "images/products/umbrella.jpg",
+    name: "Compact Umbrella",
+    rating: {
+      stars: 4.5,
+      count: 387
+    },
+    priceCents: 1899,
+    keywords: [
+      "rain",
+      "raincoat",
+      "umbrella",
+      "unisex"
+    ]
   }
 ];
