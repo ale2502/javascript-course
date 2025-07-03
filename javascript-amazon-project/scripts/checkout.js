@@ -162,17 +162,16 @@ document.querySelectorAll('.js-save-link')
     
   });
 
-document.querySelector(`.js-quantity-input-${productId}`)
-  .forEach((input) => {
-    input.addEventListener('keydown', (event) => {
-      if (event.key === 'Enter') {
-        const productId = input.dataset.productId;
+document.querySelectorAll('.js-save-link')
+  .forEach((link) => {
+    const productId = link.dataset.productId;
+    const quantityInput = document.querySelector(`.js-quantity-input-${productId}`);
 
+    quantityInput.addEventListener('keydown', event => {
+      if (event.key === 'Enter') {
         const container = document.querySelector(`.js-cart-item-container-${productId}`);
 
         container.classList.remove('is-editing-quantity');
-
-        const quantityInput = document.querySelector(`.js-quantity-input-${productId}`);
 
         const newQuantity = Number(quantityInput.value);
         updateQuantity(productId, newQuantity);
