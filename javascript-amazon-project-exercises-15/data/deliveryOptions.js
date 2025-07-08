@@ -32,3 +32,8 @@ export function calculateDeliveryDate(deliveryOption) {
   const dateString = deliveryDate.format('dddd, MMMM D');
   return dateString;
 }
+
+export function deliveryDateNoSatSun() {
+  let i = 0;
+  while ()
+}
