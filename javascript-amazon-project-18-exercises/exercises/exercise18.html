@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Lesson 18</title>
+  </head>
+  <body>
+    <script>
+      /*
+      const xhr = new XMLHttpRequest();
+      
+      xhr.addEventListener('load', () => {
+        console.log(xhr.response);
+      });
+      
+      xhr.open('GET', 'https://supersimplebackend.dev/greeting');
+      xhr.send();
+      */
+
+      /*
+      fetch('https://supersimplebackend.dev/greeting').then((response) => {
+        return response.text();
+      }).then((message) => {
+        console.log(message);
+      });
+      */
+
+      /*
+      async function loadGreeting() {
+        const response = await fetch('https://supersimplebackend.dev/greeting');
+        const text = await response.text();
+        console.log(text);
+      }
+      loadGreeting();
+      */
+
+      //18d
+      /*
+      async function sendData() {
+        const response = await fetch('https://supersimplebackend.dev/greeting', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            name: 'Alessandro'
+          })
+        });
+
+        const result = await response.text();
+        console.log(result);
+      }
+      sendData();
+      */
+
+      //18e
+      /*
+      async function tryAmazonRequest() {
+        const response = await fetch('https://amazon.com');
+        const text = await response.text();
+        console.log(text);
+      }
+      tryAmazonRequest();
+      */
+      
+      //18f
+      /*
+      async function tryAmazonRequest() {
+        try {
+          const response = await fetch('https://amazon.com');
+          const text = await response.text();
+          console.log(text);
+        } catch (error) {
+          console.log('CORS error. Your request was blocked by the backend.');
+        }
+      }
+      tryAmazonRequest();
+      */
+
+      // 18g
+      async function sendData() {
+        try {
+          const response = await fetch('https://supersimplebackend.dev/greeting', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        });
+        if (response.status >= 400) {
+          throw response;
+        } 
+
+        const text = await response.text();
+        console.log(text);
+
+        } catch (error) {
+          if (error.status === 400) {
+            const errorMessage = await error.json();
+            console.log(errorMessage);
+          } else {
+            console.log('Network error. Please try again later.');
+          }
+        }
+      }
+      sendData();
+
+    </script>
+  </body>
+</html>
